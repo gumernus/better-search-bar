@@ -1,22 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit&display=swap');
 *{
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
 }
 
 body{
-    box-sizing: border-box;
-    background-color: blueviolet;
+  background: #ffffff;
+  padding: 0 20px;
 }
 
-.container{
+::selection{
+  color: #fff;
+  background: #664AFF;
+}
+
+.wrapper{
+  max-width: 450px;
+  margin: 150px auto;
+}
+
+.wrapper .search-input{
+  background: #fff;
+  width: 100%;
+  border-radius: 30px;
+  position: relative;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2)
+}
+
+.wrapper h4{
+    color: #664AFF;
     text-align: center;
-    margin-top: 10%;
+    margin-bottom: 30px;
+    width: 100%;
+    position: relative;
+    font-family: 'Outfit', sans-serif;
+  font-size: 60px;
+    text-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2)
+  }
+
+.search-input input{
+  height: 55px;
+  width: 100%;
+  outline: none;
+  border: none;
+  border-radius: 30px;
+  padding: 0 60px 0 20px;
+  font-size: 18px;
 }
 
-.container input{
-    padding: 10px;
-    width: 20%;
-    outline: 0;
-    border: 0;
-    border-radius: 20px;
+.search-input.active input{
+  border-radius: 30px 30px 0 0;
 }
+
+.search-input .autocom-box{
+  padding: 0;
+  opacity: 0;
+  pointer-events: none;
+  max-height: 280px;
+  overflow-y: hidden;
+}
+
+.search-input.active .autocom-box{
+  padding: 10px 8px;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.autocom-box li{
+  list-style: none;
+  padding: 8px 12px;
+  display: none;
+  width: 100%;
+  cursor: default;
+}
+
+.search-input.active .autocom-box li{
+  display: block;
+}
+
+.autocom-box li:hover{
+  background: #efefef;
+}
+
+.autocom-box li:hover:last-child{
+    border-radius: 0 0 20px 20px;
+  background: #efefef;
+}
+
+.search-input .icon{
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  height: 55px;
+  width: 55px;
+  text-align: center;
+  line-height: 55px;
+  font-size: 20px;
+  color: #644bff;
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 600px) {
+    body {
+        padding: 0 50px;
+    }
+    .wrapper h4{
+        color: #664AFF; 
+        text-align: center;
+        margin-bottom: 30px;
+        width: 100%;
+        position: relative;
+        font-family: 'Outfit', sans-serif;
+        font-size: 40px;
+        text-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2)
+    }
+
+  }
